@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import { SectionHeader } from "@/components/section-header";
 import { PORTFOLIO_DATA } from "@/content/portfolio-data";
 import { GraduationCap, Code2, Users2, Compass, Lightbulb } from "lucide-react";
@@ -10,28 +11,47 @@ export function AboutSection() {
     <section id="about" className="py-20 lg:py-28 relative" aria-label="About Priyanshu Kumar">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
-          badge="BIOGRAPHY & ETHOS"
+          badge="BIOGRAPHY &amp; ETHOS"
           title="Bridging Theoretical Foundations with Practical Engineering"
           description="A disciplined approach to software craft: creating tangible, human-centric digital interfaces backed by verified teamwork and continuous learning."
         />
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
-          {/* Main Narrative Card */}
+          {/* Main Narrative Card with Formal Portrait Inset */}
           <div className="lg:col-span-7 rounded-2xl bg-[#101522] border border-[rgba(190,205,230,0.12)] p-6 sm:p-8 flex flex-col justify-between">
-            <div className="space-y-4 text-base text-[#A2ACBD] leading-relaxed">
-              <p>
-                I am a second-year B.Tech student in Computer Science and Engineering at{" "}
-                <span className="text-[#F3F5FA] font-semibold">{education.institution}</span>, based in West Bengal, India.
-              </p>
-              <p>
-                My focus centers on frontend engineering and AI-assisted application architecture. I believe the true value of code lies not in superficial flashiness, but in how reliably and thoughtfully it resolves user challenges. In team settings, I take pride in owning user interfaces and integrating clean client-side contracts with backend systems.
-              </p>
-              <p>
-                Whether competing in the <span className="text-[#5B8CFF] font-medium">Smart India Hackathon 2026 Grand Finale</span> with Team Veyra, engineering evidence ingestion modules for collaborative cybersecurity platforms, or prototyping lead automation tools, I hold myself to strict factual accountability and respectful collaboration.
-              </p>
+            <div className="flex flex-col sm:flex-row gap-6 items-start mb-6">
+              {/* Formal Portrait Card */}
+              <div className="relative w-28 sm:w-36 aspect-[3/4] rounded-2xl overflow-hidden shrink-0 border border-[rgba(190,205,230,0.18)] shadow-lg shadow-black/40 bg-[#080B12]">
+                <Image
+                  src="/assets/priyanshu-formal-portrait.jpg"
+                  alt="Priyanshu Kumar formal professional portrait"
+                  fill
+                  className="object-cover object-top"
+                  sizes="(max-width: 640px) 120px, 150px"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#080B12]/80 via-transparent to-transparent" />
+                <span className="absolute bottom-1.5 inset-x-0 text-center text-[9px] font-mono text-[#5B8CFF] uppercase font-bold">
+                  Priyanshu
+                </span>
+              </div>
+
+              {/* Narrative Text */}
+              <div className="space-y-3.5 text-sm sm:text-base text-[#A2ACBD] leading-relaxed">
+                <p>
+                  I am a second-year B.Tech student in Computer Science and Engineering at{" "}
+                  <span className="text-[#F3F5FA] font-semibold">{education.institution}</span>, based in West Bengal, India.
+                </p>
+                <p>
+                  My focus centers on frontend engineering and AI-assisted application architecture. I believe the true value of code lies in how reliably and thoughtfully it resolves user challenges. In team environments, I lead user interfaces and integrate clean client-side contracts with backend systems.
+                </p>
+              </div>
             </div>
 
-            <div className="pt-6 mt-6 border-t border-[rgba(190,205,230,0.1)] grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <p className="text-sm text-[#A2ACBD] leading-relaxed mb-6">
+              Whether competing in the <span className="text-[#5B8CFF] font-medium">Smart India Hackathon 2026 Grand Finale</span> with Team Veyra, engineering evidence ingestion modules for collaborative cybersecurity platforms, or prototyping lead automation tools, I hold myself to strict factual accountability and respectful collaboration.
+            </p>
+
+            <div className="pt-6 border-t border-[rgba(190,205,230,0.1)] grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="flex items-start gap-3">
                 <div className="p-2 rounded-lg bg-[#5B8CFF]/10 text-[#5B8CFF] shrink-0 mt-0.5">
                   <Compass size={18} />

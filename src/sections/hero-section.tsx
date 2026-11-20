@@ -1,6 +1,6 @@
 import React from "react";
 import { PORTFOLIO_DATA } from "@/content/portfolio-data";
-import { HeroScene } from "@/components/hero-scene/HeroScene";
+import { HeroCinematicPortal } from "@/components/hero-scene/HeroCinematicPortal";
 import { ArrowDown, ArrowUpRight } from "lucide-react";
 
 export function HeroSection() {
@@ -9,23 +9,23 @@ export function HeroSection() {
   return (
     <section
       id="hero"
-      className="relative min-h-[90vh] flex items-center justify-center pt-28 pb-16 lg:py-32 overflow-hidden"
+      className="relative min-h-[92vh] flex items-center justify-center pt-28 pb-16 lg:py-32 overflow-hidden"
       aria-label="Introduction and Hero"
     >
       {/* Background Ambience and Subtle Trajectory Lines */}
       <div
-        className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#5B8CFF]/10 rounded-full blur-[140px] pointer-events-none -z-10"
+        className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-[#5B8CFF]/12 rounded-full blur-[150px] pointer-events-none -z-10"
         aria-hidden="true"
       />
       <div
-        className="absolute top-1/3 right-10 w-[400px] h-[400px] bg-[#9A78FF]/10 rounded-full blur-[120px] pointer-events-none -z-10"
+        className="absolute top-1/3 right-10 w-[500px] h-[500px] bg-[#9A78FF]/12 rounded-full blur-[140px] pointer-events-none -z-10"
         aria-hidden="true"
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           {/* Left Column: Personal Narrative & CTAs */}
-          <div className="lg:col-span-7 flex flex-col items-start">
+          <div className="lg:col-span-6 flex flex-col items-start">
             {/* Status Pill */}
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#101522] border border-[rgba(190,205,230,0.16)] text-xs font-mono text-[#5B8CFF] mb-6 shadow-sm">
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" aria-hidden="true" />
@@ -42,7 +42,7 @@ export function HeroSection() {
             </div>
 
             {/* Grounded Pitch */}
-            <p className="text-base sm:text-lg text-[#A2ACBD] leading-relaxed max-w-2xl mb-8">
+            <p className="text-base sm:text-lg text-[#A2ACBD] leading-relaxed max-w-xl mb-8">
               Second-year Computer Science and Engineering student at MCKV Institute of Engineering. I build reliable frontend interfaces, interactive data dashboards, and AI-assisted workflows—grounded in honest attribution, clean code craft, and real product utility.
             </p>
 
@@ -80,9 +80,9 @@ export function HeroSection() {
             </div>
           </div>
 
-          {/* Right Column: Real-time 3D Hero Identity Scene */}
-          <div className="lg:col-span-5 flex items-center justify-center">
-            <HeroScene />
+          {/* Right Column: Genuine 3D Interactive Hero Portal */}
+          <div className="lg:col-span-6 flex items-center justify-center w-full">
+            <HeroCinematicPortal />
           </div>
         </div>
       </div>
