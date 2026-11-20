@@ -1,6 +1,6 @@
 import React from "react";
 import { PORTFOLIO_DATA } from "@/content/portfolio-data";
-import { OrbitalHeroVisual } from "@/components/orbital-hero-visual";
+import { HeroScene } from "@/components/hero-scene/HeroScene";
 import { ArrowDown, ArrowUpRight } from "lucide-react";
 
 export function HeroSection() {
@@ -80,9 +80,9 @@ export function HeroSection() {
             </div>
           </div>
 
-          {/* Right Column: Editorial 3D Orbital Art Panel */}
+          {/* Right Column: Real-time 3D Hero Identity Scene */}
           <div className="lg:col-span-5 flex items-center justify-center">
-            <OrbitalHeroVisual />
+            <HeroScene />
           </div>
         </div>
       </div>

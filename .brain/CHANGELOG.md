@@ -18,13 +18,17 @@
 - Implemented accessible focus rings (`:focus-visible`), WCAG 2.2 AA compliant contrast, and subtle glassmorphic styling.
 - Bound Geist and Geist Mono via `next/font/google`.
 
-### Phase 3 & 4: Website Architecture & Hero Experience
+### Phase 3 & 4: Website Architecture & Real-Time 3D Hero Experience
 - Engineered responsive navigation header with skip link (`#main-content`), brand monogram, anchor navigation, and accessible mobile drawer with Escape key listener.
-- Built interactive `OrbitalHeroVisual` featuring:
-  - Atmospheric radial gradients and orbital coordinate markers.
-  - 3D-inspired geometric P/K brand mark with orbital trajectory.
-  - Fine pointer parallax (disabled for coarse input and `prefers-reduced-motion`).
-  - Integrated candidate portrait review modal allowing owner inspection while keeping the default public hero 100% compliant with Rule 4.
+- **Real-Time 3D Hero Scene (`HeroScene.tsx`, `HeroSceneCanvas.tsx`, `Monogram3D.tsx`, `FloatingElements.tsx`):**
+  - Upgraded the hero section with a true real-time 3D interactive scene built with **Three.js** and **React Three Fiber**.
+  - **Procedural 3D Geometric P/K Monogram:** Extruded with real volumetric depth (`THREE.ExtrudeGeometry` with beveled edges) and layered dimensional facets.
+  - **Premium Materials:** High-refraction `MeshPhysicalMaterial` featuring metallic charcoal base, electric blue-violet rim reflections (`metalness: 0.85`, `roughness: 0.22`, `clearcoat: 0.8`), and subtle emissive glow.
+  - **Cinematic Multi-Point Lighting:** Neutral ambient illumination, cobalt key light (`#5B8CFF`), violet rim light (`#9A78FF`), and central depth point light with realistic quadratic falloff.
+  - **Spatial Surroundings & Depth:** Concentric 3D orbital rings (`torusGeometry`), floating faceted geometric polyhedra (icosahedron, octahedron) positioned at varied z-depths (`z: -2.1` to `z: 1.2`), and an orbiting satellite beacon with traveling point light.
+  - **Smooth Damped Parallax:** Camera rig with smooth `THREE.Vector3.lerp` mouse tracking.
+  - **Hardware & Accessibility Adaptation:** Capped pixel ratio (`dpr={[1, 1.5]}`) optimized for the baseline AMD Ryzen 3 7320U / Radeon 610M, with automatic static fallback for `prefers-reduced-motion` and non-WebGL environments.
+  - **Portrait Audit Modal:** Preserved review drawer for owner inspection of unapproved candidate portraits per Rule 4.
 
 ### Phase 5 & 6: Projects, Contributions & Attribution
 - Authored `src/content/portfolio-data.ts` establishing single-source truth for:
