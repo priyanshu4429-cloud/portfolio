@@ -1,5 +1,6 @@
 import React from "react";
 import { Project } from "@/content/portfolio-data";
+import { ProjectIllustration } from "./project-illustrations";
 import { GithubIcon } from "./social-icons";
 import { ExternalLink, ShieldCheck, UserCheck, Sparkles, Layers } from "lucide-react";
 
@@ -17,8 +18,8 @@ export function ProjectCard({ project }: ProjectCardProps) {
       className="group relative flex flex-col justify-between rounded-2xl bg-[#101522] border border-[rgba(190,205,230,0.12)] p-6 sm:p-8 hover:border-[#5B8CFF]/40 transition-all duration-300 hover:shadow-xl hover:shadow-[#5B8CFF]/5"
       aria-labelledby={`project-${project.id}-title`}
     >
-      {/* Top Header: Kind & Status Badges */}
       <div>
+        {/* Top Header: Kind & Status Badges */}
         <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
           <span
             className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-medium tracking-wide ${
@@ -43,6 +44,9 @@ export function ProjectCard({ project }: ProjectCardProps) {
             {project.badge}
           </span>
         </div>
+
+        {/* Bespoke Project Architecture Illustration */}
+        <ProjectIllustration id={project.id} />
 
         {/* Project Title */}
         <h3

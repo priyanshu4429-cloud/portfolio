@@ -6,14 +6,13 @@
   --surface-raised: #171E2D;
   --surface-hover: #1E273A;
   --text: #F3F5FA;
-  --text-muted: #A2ACBD;
-  --text-dim: #717D96;
-  --line: rgba(190, 205, 230, 0.12);
-  --line-strong: rgba(190, 205, 230, 0.24);
+  --muted: #A2ACBD;
+  --line: rgba(190, 205, 230, 0.14);
+  --line-strong: rgba(190, 205, 230, 0.28);
   --blue: #5B8CFF;
-  --blue-glow: rgba(91, 140, 255, 0.18);
+  --blue-glow: rgba(91, 140, 255, 0.2);
   --violet: #9A78FF;
-  --violet-glow: rgba(154, 120, 255, 0.18);
+  --violet-glow: rgba(154, 120, 255, 0.2);
   --focus: #B6D0FF;
 }
 
@@ -27,9 +26,8 @@
   --color-brand-focus: #B6D0FF;
   --color-text-primary: #F3F5FA;
   --color-text-muted: #A2ACBD;
-  --color-text-dim: #717D96;
-  --color-border-subtle: rgba(190, 205, 230, 0.12);
-  --color-border-strong: rgba(190, 205, 230, 0.24);
+  --color-border-subtle: rgba(190, 205, 230, 0.14);
+  --color-border-strong: rgba(190, 205, 230, 0.28);
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -49,43 +47,47 @@ body {
   color: #F3F5FA;
   min-height: 100vh;
   overflow-x: hidden;
-  selection-background-color: rgba(91, 140, 255, 0.3);
-  selection-color: #F3F5FA;
 }
 
 ::selection {
-  background: rgba(91, 140, 255, 0.3);
+  background: rgba(91, 140, 255, 0.35);
   color: #F3F5FA;
 }
 
 /* Accessible focus ring */
 :focus-visible {
   outline: 2px solid #5B8CFF;
-  outline-offset: 2px;
+  outline-offset: 3px;
 }
 
 /* Glassmorphism subtle surface */
 .glass-panel {
-  background: rgba(16, 21, 34, 0.7);
+  background: rgba(16, 21, 34, 0.75);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(190, 205, 230, 0.12);
+  border: 1px solid rgba(190, 205, 230, 0.14);
 }
 
 .glass-panel-raised {
-  background: rgba(23, 30, 45, 0.75);
+  background: rgba(23, 30, 45, 0.8);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(190, 205, 230, 0.16);
+  border: 1px solid rgba(190, 205, 230, 0.18);
 }
 
 /* Subtle glow effects */
 .glow-blue {
-  box-shadow: 0 0 35px -5px rgba(91, 140, 255, 0.25);
+  box-shadow: 0 0 40px -5px rgba(91, 140, 255, 0.28);
 }
 
 .glow-violet {
-  box-shadow: 0 0 35px -5px rgba(154, 120, 255, 0.25);
+  box-shadow: 0 0 40px -5px rgba(154, 120, 255, 0.28);
+}
+
+/* Trajectory Accent Line */
+.trajectory-line {
+  background: linear-gradient(90deg, rgba(91, 140, 255, 0.8) 0%, rgba(154, 120, 255, 0.4) 70%, transparent 100%);
+  height: 1px;
 }
 
 /* Subtle animations */
@@ -127,7 +129,7 @@ body {
 }
 
 .animate-orbit {
-  animation: orbitSpin 35s linear infinite;
+  animation: orbitSpin 40s linear infinite;
 }
 
 @media (prefers-reduced-motion: reduce) {

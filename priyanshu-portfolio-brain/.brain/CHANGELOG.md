@@ -14,7 +14,7 @@
   - Surfaces: `--surface: #101522`, `--surface-raised: #171E2D`
   - Electric blue signature accent: `--blue: #5B8CFF`
   - Supporting creative accent: `--violet: #9A78FF`
-  - Line borders: hairline `rgba(190, 205, 230, 0.12)`
+  - Line borders: hairline `rgba(190, 205, 230, 0.14)` matching `.brain/DESIGN_SYSTEM.md`
 - Implemented accessible focus rings (`:focus-visible`), WCAG 2.2 AA compliant contrast, and subtle glassmorphic styling.
 - Bound Geist and Geist Mono via `next/font/google`.
 
@@ -33,16 +33,18 @@
   - **TrustTrace:** Collaborative cybersecurity platform. Explicit attribution: Worker 02 pipeline engineer (evidence ingestion, normalization, persistence, API integration).
   - **R K Traders:** Client website project. All unverified internal metrics and proprietary client information withheld per privacy rules.
 - Engineered `ProjectCard` component with visual separation for project type, verified individual contributions, and attribution boundaries.
+- Designed `ProjectIllustration` component providing bespoke system diagrams (workflow node graph, telemetry waveform, schema ingestion architecture, and storefront layout) without fake marketing mockups.
 - Built `ContributionsSection` providing an in-depth engineering breakdown of architectures authored.
 
 ### Phase 7: Achievements, Education, Contact & Footer
 - Built `AchievementsSection` detailing the Smart India Hackathon (SIH) 2026 Grand Finale participation and Top 30 national selection.
 - Built `EducationSection` detailing B.Tech in CSE at MCKV Institute of Engineering with academic coursework.
 - Built `ContactSection` featuring `ContactCard` with direct `mailto:`, direct `tel:`, copy-to-clipboard functionality with live feedback, and a native direct email composer helper (avoiding fake backend forms).
-- Built semantic `Footer` with dynamic runtime year (`new Date().getFullYear()`) and back-to-top anchor.
+- Built semantic `Footer` with dynamic runtime year and back-to-top anchor.
 
-### Phase 8: Accessibility & Performance
-- Full keyboard operability and visible focus rings.
+### Phase 8: Accessibility, Performance & Verification
+- Full keyboard operability and visible focus rings (`:focus-visible`).
 - Zero forced layout shift; all media dimensionally bounded.
 - Support for `prefers-reduced-motion: reduce`.
-- Full static generation compatibility with Next.js Turbopack compiler.
+- Full static generation compatibility with Next.js Turbopack compiler (`npm run build` exits 0 with optimized static content).
+- ESLint passed with 0 errors and 0 warnings (`npm run lint` exits 0).
