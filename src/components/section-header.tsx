@@ -1,45 +1,58 @@
 import React from "react";
 
 interface SectionHeaderProps {
-  badge: string;
+  watermark: string;
   title: string;
-  description: string;
+  subtitle?: string;
+  dark?: boolean;
   align?: "left" | "center";
   className?: string;
 }
 
 export function SectionHeader({
-  badge,
+  watermark,
   title,
-  description,
-  align = "left",
+  subtitle,
+  dark = false,
+  align = "center",
   className = "",
 }: SectionHeaderProps) {
   const isCenter = align === "center";
 
   return (
     <div
-      className={`mb-12 md:mb-16 ${
-        isCenter ? "text-center max-w-2xl mx-auto" : "max-w-3xl"
+      className={`relative mb-10 md:mb-14 select-none ${
+        isCenter ? "text-center flex flex-col items-center" : "text-left"
       } ${className}`}
     >
+      {/* Giant Faint Background Watermark (matching Image 2 & 3) */}
       <div
-        className={`inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-medium tracking-wide mb-3 bg-[#101522]/80 border border-[rgba(190,205,230,0.14)] text-[#5B8CFF] ${
-          isCenter ? "justify-center" : ""
+        className={`text-5xl sm:text-7xl md:text-8xl font-extrabold tracking-tight uppercase leading-none pointer-events-none ${
+          dark ? "text-white/[0.05]" : "text-[#111318]/[0.05]"
         }`}
+        aria-hidden="true"
       >
-        <span className="w-1.5 h-1.5 rounded-full bg-[#5B8CFF] animate-pulse" aria-hidden="true" />
-        <span>{badge}</span>
+        {watermark}
       </div>
 
-      <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-[#F3F5FA] mb-4">
-        {title}
+      {/* Foreground Crisp Title */}
+      <h2
+        className={`-mt-6 sm:-mt-8 md:-mt-10 text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight uppercase ${
+          dark ? "text-white" : "text-[#111318]"
+        }`}
+      >
+        /{title}
       </h2>
 
-      <p className="text-base sm:text-lg text-[#A2ACBD] leading-relaxed">
-        {description}
-      </p>
+      {subtitle && (
+        <p
+          className={`mt-3 text-sm sm:text-base max-w-2xl leading-relaxed ${
+            dark ? "text-[#9CA3AF]" : "text-[#5A606D]"
+          }`}
+        >
+          {subtitle}
+        </p>
+      )}
     </div>
   );
 }
-

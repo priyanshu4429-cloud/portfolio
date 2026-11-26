@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { CursorGlow } from "@/components/cursor-glow";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -15,8 +16,8 @@ const geistMono = Geist_Mono({
 });
 
 export const viewport: Viewport = {
-  themeColor: "#080B12",
-  colorScheme: "dark",
+  themeColor: "#FFFFFF",
+  colorScheme: "light",
   width: "device-width",
   initialScale: 1,
 };
@@ -68,9 +69,10 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} dark scroll-smooth`}
+      className={`${geistSans.variable} ${geistMono.variable} scroll-smooth`}
     >
-      <body className="min-h-screen bg-[#080B12] text-[#F3F5FA] font-sans antialiased selection:bg-[#5B8CFF]/30 selection:text-[#F3F5FA] flex flex-col">
+      <body className="min-h-screen bg-white text-[#111318] font-sans antialiased selection:bg-[#111318] selection:text-white flex flex-col">
+        <CursorGlow />
         {children}
       </body>
     </html>
